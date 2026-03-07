@@ -39,7 +39,6 @@ Goal:
 ## Project Highlights
 
 - Full lifecycle workflow: data loading, cleaning, feature preparation, modeling, evaluation, and business translation.
-- Multiple notebooks for iterative experimentation and final workflow.
 - Dedicated **business value analysis** script to estimate financial upside from model-guided retention.
 - Clear confusion-matrix-driven operational interpretation:
 	- **TP:** churners correctly identified
