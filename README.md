@@ -125,7 +125,7 @@ Goal:
 3. Install dependencies:
 
 ```bash
-pip install pandas numpy matplotlib seaborn xgboost jupyter
+pip install -r requirements.txt
 ```
 
 4. Open and run the final notebook:
@@ -139,6 +139,26 @@ jupyter notebook churn_prediction_final.ipynb
 ```bash
 python business_value_analysis.py
 ```
+
+6. Launch the Streamlit dashboard:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+---
+
+## Streamlit Deployment
+
+The dashboard is ready to deploy on Streamlit Community Cloud.
+
+1. Push this repository to GitHub.
+2. Sign in to Streamlit Community Cloud.
+3. Create a new app and point it to `streamlit_app.py`.
+4. Make sure `requirements.txt` is included at the repository root so Streamlit can install the packages.
+5. Deploy.
+
+If you want a real scoring dashboard later, save the trained preprocessing and model pipeline from the notebook as a file such as `model.joblib`, then load it inside `streamlit_app.py`.
 
 ---
 
