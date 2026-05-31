@@ -144,6 +144,14 @@ ENV/
 env.bak/
 venv.bak/
 
+# MLOps artifacts
+mlruns/
+artifacts/
+models/
+*.joblib
+*.pkl
+*.onnx
+
 # Spyder project settings
 .spyderproject
 .spyproject
@@ -209,3 +217,5 @@ __marimo__/
 
 churn_prediction_copy.ipynb
 churn_prediction.ipynb
+
+data/

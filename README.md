@@ -105,15 +105,44 @@ Goal:
 
 ```text
 .
-|-- business_value_analysis.py
-|-- churn_prediction.ipynb
-|-- churn_prediction_copy.ipynb
-|-- churn_prediction_final.ipynb
+|-- aws/
+|-- artifacts/
+|-- configs/
 |-- data/
+|   |-- external/
+|   |-- processed/
+|   |-- raw/
 |   |-- customer_churn_dataset-training-master.csv
 |   `-- customer_churn_dataset-testing-master.csv
+|-- docker/
+|-- mlruns/
+|-- notebooks/
+|-- src/
+|   |-- data/
+|   |-- features/
+|   |-- models/
+|   |-- pipelines/
+|   `-- utils/
+|-- tests/
 `-- README.md
 ```
+
+## Generic MLOps Layout
+
+- `notebooks/` for exploration and experiments.
+- `src/` for reusable training, feature, model, and inference code.
+- `configs/` for YAML-based project and experiment settings.
+- `docker/` for container build and compose files.
+- `mlruns/` for local MLflow tracking data.
+- `aws/` for deployment notes and cloud-specific setup.
+- `artifacts/` for exported models and reports.
+- `data/raw`, `data/processed`, and `data/external` for data lifecycle stages.
+
+## Stack Direction
+
+- Docker for local reproducible execution.
+- MLflow for experiment tracking and model registry workflow.
+- AWS for storage, deployment, and serving.
 
 ---
 

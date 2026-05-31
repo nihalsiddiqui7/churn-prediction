@@ -5,3 +5,7 @@ matplotlib
 seaborn
 scikit-learn
 xgboost
+mlflow
+boto3
+PyYAML
+joblib

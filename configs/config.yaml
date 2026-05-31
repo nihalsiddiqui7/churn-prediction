@@ -1,0 +1,19 @@
+project:
+  name: churn-prediction
+  type: mlops
+
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  external_dir: data/external
+
+mlflow:
+  tracking_uri: http://localhost:5000
+  experiment_name: churn_prediction
+
+docker:
+  image_name: churn-prediction
+
+aws:
+  region: us-east-1
+  s3_bucket: churn-prediction-artifacts
