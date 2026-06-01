@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def feature_engineering(df: pd.DataFrame) -> pd.DataFrame:
-    """"
+    """
     Perform Feature Engineering Steps like
     1-One-Hot Encoding for categorical features.
     2-Feature Scaling is not needed for tree-based models but can be added if necessary.(we will skip it for now)

@@ -12,7 +12,7 @@ def validate_data(df) -> Tuple[bool, List[str]]:
         Tuple[bool, List[str]]: A tuple containing a boolean indicating if the data is valid and a list of validation errors if any.
     """
     # Create a Great Expectations DataFrame
-    ge_df = ge.from_pandas(df)
+    ge_df = ge.dataset.PandasDataset(df)
     print("Starting schema validation...")
     # Define expectations
     expectations = [
