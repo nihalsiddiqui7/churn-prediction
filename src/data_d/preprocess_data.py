@@ -25,5 +25,8 @@ def preprocess_data(df: pd.DataFrame, target_column: str) -> pd.DataFrame:
         if col in df.columns:
             df = df.drop(columns=[col])
             break
+    
+    #only columns to keep for the final dataset
+    df = df[['Support Calls', 'Churn', 'Total Spend', 'Payment Delay','Last Interaction','Subscription Type','Contract Length']]
 
     return df
