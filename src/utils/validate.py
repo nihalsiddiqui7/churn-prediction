@@ -16,7 +16,7 @@ def validate_data(df) -> Tuple[bool, List[str]]:
     print("Starting schema validation...")
     # Define expectations
     expectations = [
-        ge_df.expect_column_to_not_be_null('CustomerID'),
+        ge_df.expect_column_values_to_not_be_null('CustomerID'),
         ge_df.expect_column_to_exist('Gender'),
         ge_df.expect_column_to_exist('Age'),
         ge_df.expect_column_to_exist('Support Calls'),

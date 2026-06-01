@@ -9,6 +9,7 @@ sys.path.append(os.path.abspath("src"))
 from data_d.load_data import load_data
 from data_d.preprocess_data import preprocess_data
 from features.build_features import feature_engineering
+from utils.validate import validate_data
 
 # === CONFIG ===
 DATA_PATH = "D:\\Data science\\Portfolio Projects\\churn_prediction\\churn-prediction\\data\\raw\\customer_churn_dataset.csv"  # adjust to your file path
@@ -23,6 +24,11 @@ def main():
     print(f"Data loaded. Shape: {df.shape}")
     print(df.head(3))
 
+    #validate data 
+    print("\nValidating data...")
+    validate_data(df)
+    print("Data validation passed!")
+    
     # 2. Preprocess
     print("\n[2] Preprocessing data...")
     df_clean = preprocess_data(df, target_column='Churn')
