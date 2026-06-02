@@ -4,10 +4,12 @@ Runs sequentially: load → validate → preprocess → feature engineering
 """
 
 import os
+from pyexpat import model
 import sys
 from pathlib import Path
 import time
 import argparse
+import joblib
 import pandas as pd
 import mlflow
 import mlflow.sklearn
@@ -183,13 +185,25 @@ def main(args):
         print(f"   F1 Score: {f1:.3f} | ROC AUC: {roc_auc:.3f}")
 
         # === STAGE 7: Model Serialization and Logging ===
-        print("💾 Saving model to MLflow...")
-        # ESSENTIAL: Log model in MLflow's standard format for serving
-        mlflow.sklearn.log_model(
-            model, 
-            artifact_path="model"  # This creates a 'model/' folder in MLflow run artifacts
+        # === STAGE 7: Model Serialization and Logging ===
+        print("💾 Saving model...")
+
+        import joblib
+
+        # Save local model for FastAPI
+        joblib.dump(
+            model,
+            os.path.join(artifacts_dir, "model.pkl")
         )
-        print("✅ Model saved to MLflow for serving pipeline")
+        
+
+        # Save to MLflow
+        mlflow.sklearn.log_model(
+            model,
+            artifact_path="model"
+        )
+
+        print("✅ Model saved locally and to MLflow")
 
         # === Final Performance Summary ===
         print(f"\n⏱️  Performance Summary:")
