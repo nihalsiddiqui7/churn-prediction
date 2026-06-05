@@ -148,9 +148,7 @@ venv.bak/
 mlruns/
 
 models/
-*.joblib
-*.pkl
-*.onnx
+
 
 # Spyder project settings
 .spyderproject
