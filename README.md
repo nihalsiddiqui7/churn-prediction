@@ -1,207 +1,472 @@
-# Customer Churn Prediction with Business ROI Analysis
+# 🚀 Customer Churn Prediction MLOps Project
 
-![Business Case Overview](business_case.png)
+![Streamlit Dashboard](images/streamlit-dashboard.png)
 
-An end-to-end machine learning project that predicts customer churn and translates model performance into clear business value.
-
-This project is designed to answer two questions recruiters and business stakeholders care about:
-1. Can the model accurately identify at-risk customers?
-2. Does acting on the model create measurable financial impact?
+> End-to-end MLOps pipeline for customer churn prediction using XGBoost, Great Expectations, MLflow, FastAPI, Streamlit, Docker, GitHub Actions, and AWS EC2.
 
 ---
 
-## Executive Summary
+# 📌 Project Overview
 
-- Built a churn prediction pipeline using **XGBoost** on a large customer dataset (100k+ records in test set).
-- Achieved strong churn detection performance with approximately:
-	- **Accuracy:** ~90%
-	- **Churn Recall:** ~93%
-- Converted model output into business outcomes using a cost-benefit framework:
-	- Estimated **net savings:** **$20.7M** (test-scope scenario under stated assumptions)
-	- Estimated **cost reduction / ROI impact:** **30.80%**
-	- Estimated annualized savings projection: **$103.7M**
+Customer churn is one of the most important business challenges for subscription-based companies. Retaining existing customers is significantly cheaper than acquiring new ones, making churn prediction a critical business problem.
 
-This is not just a classification notebook. It is a business-oriented analytics solution that connects data science outputs to decision-making.
+This project predicts customer churn and demonstrates a complete machine learning lifecycle, from data validation and model training to cloud deployment and business impact analysis.
 
----
+### Key Objectives
 
-## Business Problem
-
-Customer churn directly impacts recurring revenue and growth. Retaining high-risk customers is often cheaper than acquiring new ones, but retention campaigns are expensive if poorly targeted.
-
-Goal:
-- Predict which customers are likely to churn.
-- Prioritize retention actions on the right segment.
-- Quantify whether intervention strategy is financially justified.
+* Predict customers likely to churn
+* Track experiments and model performance
+* Validate data quality before training
+* Deploy the model as a production-ready API
+* Build an interactive frontend for predictions
+* Automate testing and CI/CD workflows
+* Deploy the application to AWS EC2
+* Quantify business value and ROI
 
 ---
 
-## Project Highlights
+# 🏗️ Architecture
 
-- Full lifecycle workflow: data loading, cleaning, feature preparation, modeling, evaluation, and business translation.
-- Dedicated **business value analysis** script to estimate financial upside from model-guided retention.
-- Clear confusion-matrix-driven operational interpretation:
-	- **TP:** churners correctly identified
-	- **FN:** churners missed (critical revenue loss)
-	- **FP:** unnecessary retention offers
-	- **TN:** correct non-churn identification
 
----
-
-## Tech Stack
-
-- **Languages:** Python
-- **Core Libraries:** pandas, numpy
-- **Modeling:** XGBoost
-- **Visualization:** matplotlib, seaborn
-- **Environment:** Jupyter Notebook
-
----
-
-## Key Data Science Skills Demonstrated
-
-- Problem framing for real-world business context
-- Data preprocessing and feature handling
-- Classification model training and evaluation
-- Metric interpretation beyond accuracy (recall, confusion matrix impacts)
-- Model-to-business translation (ROI and sensitivity analysis)
-- Scenario analysis and annualized value projection
+```text
+Raw Data
+    ↓
+Great Expectations
+    ↓
+Feature Engineering
+    ↓
+XGBoost Training
+    ↓
+MLflow Tracking
+    ↓
+FastAPI API
+    ↓
+Docker Container
+    ↓
+GitHub Actions CI
+    ↓
+AWS EC2 Deployment
+    ↓
+Streamlit Frontend
+```
 
 ---
 
-## Business Impact Framework (from `business_value_analysis.py`)
+# 📊 Streamlit User Interface
 
-### Model Confusion Matrix Inputs
+![Streamlit Dashboard](images/streamlit-dashboard.png)
 
-- **TP:** 52,310
-- **FN:** 3,789
-- **FP:** 5,976
-- **TN:** 38,967
+The application includes an interactive Streamlit dashboard where users can:
 
-### Financial Assumptions
+* Enter customer details
+* Predict churn probability
+* View risk level categorization
+* Receive real-time predictions from the deployed API
 
-- Customer Lifetime Value (LTV): **$1,200**
-- Retention intervention cost: **$75/customer**
-- Intervention success rate: **40%**
+### Features
 
-### Estimated Outcomes
-
-- Baseline churn cost (no model): **$67,318,800**
-- Model-informed strategy cost: **$46,581,450**
-- **Net savings:** **$20,737,350**
-- **ROI / Cost reduction impact:** **30.80%**
-- **Fewer customers lost:** **37.3% reduction**
-
-### Sensitivity + Scaling
-
-- Includes sensitivity analysis across intervention success rates (25%-50%).
-- Includes scaled annual projections for broader customer base impact.
-
-> Note: Financial outputs are scenario-based and depend on assumptions. They are intended to support strategic decision-making, not to replace production finance models.
+* Interactive UI
+* Real-time inference
+* Risk classification
+* Business-friendly output
 
 ---
 
-## Repository Structure
+# 🤖 Machine Learning Model
+
+## Model Used
+
+* XGBoost Classifier
+
+## Performance Metrics
+
+| Metric    | Score            |
+| --------- | ---------------- |
+| Accuracy  | ~90%             |
+| Recall    | ~93%             |
+| Precision | Add Actual Value |
+| F1 Score  | Add Actual Value |
+| ROC-AUC   | Add Actual Value |
+
+### Why Recall Matters
+
+For churn prediction, missing a customer who is likely to leave can result in significant revenue loss. Therefore, recall was prioritized during model evaluation.
+
+---
+
+# 📈 MLflow Experiment Tracking
+
+![MLflow Dashboard](images/mlflow-dashboard.png)
+
+MLflow was used to:
+
+* Track experiments
+* Compare model runs
+* Store metrics
+* Log parameters
+* Manage model artifacts
+
+### Tracked Information
+
+* Hyperparameters
+* Accuracy
+* Recall
+* Precision
+* F1 Score
+* Model Artifacts
+
+---
+
+# ✅ Data Validation with Great Expectations
+
+![Data Validation](images/data-validation.png)
+
+Data quality checks are implemented using Great Expectations.
+
+### Validation Checks
+
+* Missing values
+* Data types
+* Column existence
+* Range checks
+* Schema consistency
+
+This ensures only valid data enters the training pipeline.
+
+---
+
+# 🌐 FastAPI Backend
+
+![FastAPI Documentation](images/fastapi-docs.png)
+
+The trained model is served through FastAPI.
+
+## Endpoints
+
+### Health Check
+
+```http
+GET /health
+```
+
+Response:
+
+```json
+{
+  "status": "healthy"
+}
+```
+
+### Prediction Endpoint
+
+```http
+POST /predict
+```
+
+Response:
+
+```json
+{
+  "prediction": 1,
+  "churn_probability": 0.6745
+}
+```
+
+---
+
+# 🐳 Docker Containerization
+
+![Docker Deployment](images/docker-running.png)
+
+The application is fully containerized using Docker for portability and reproducibility.
+
+### Build Image
+
+```bash
+docker build -t churn-api .
+```
+
+### Run Container
+
+```bash
+docker run -d \
+-p 8000:8000 \
+--name churn-api \
+churn-api
+```
+
+### Benefits
+
+* Consistent environments
+* Simplified deployment
+* Reproducibility
+* Easy cloud deployment
+
+---
+
+# 🧪 Testing
+
+![Pytest Results](images/pytest-results.png)
+
+Pytest is used to ensure application reliability.
+
+### Test Coverage
+
+* API tests
+* Data validation tests
+* Model tests
+* Preprocessing tests
+
+### Run Tests
+
+```bash
+pytest
+```
+
+### Example Output
+
+```text
+4 passed
+```
+
+---
+
+# ⚙️ CI/CD Pipeline
+
+![GitHub Actions](images/github-actions.png)
+
+GitHub Actions automatically:
+
+* Installs dependencies
+* Runs test suite
+* Builds Docker image
+* Verifies deployment readiness
+
+### CI Workflow
+
+```text
+Push Code
+    ↓
+Install Dependencies
+    ↓
+Run Tests
+    ↓
+Build Docker Image
+    ↓
+Success
+```
+
+---
+
+# ☁️ AWS EC2 Deployment
+
+![AWS EC2](images/aws-ec2.png)
+
+The application was deployed to AWS EC2 using Docker.
+
+### Deployment Process
+
+```text
+GitHub Repository
+        ↓
+AWS EC2
+        ↓
+Docker Build
+        ↓
+Docker Run
+        ↓
+Public API
+```
+
+### AWS Services Used
+
+* EC2
+* Security Groups
+* SSH Access
+* Docker
+
+---
+
+# 🌍 Public API Deployment
+
+![AWS API](images/aws-api.png)
+
+The FastAPI service was successfully deployed and tested on AWS.
+
+### Verification
+
+* Health endpoint tested
+* Prediction endpoint tested
+* Public access confirmed
+
+---
+
+# 💰 Business Impact Analysis
+
+![Business Impact](images/business-impact.png)
+
+The project translates machine learning predictions into measurable business value.
+
+## Financial Assumptions
+
+| Metric                    | Value  |
+| ------------------------- | ------ |
+| Customer Lifetime Value   | $1,200 |
+| Retention Cost            | $75    |
+| Intervention Success Rate | 40%    |
+
+## Estimated Outcomes
+
+| Metric                | Value   |
+| --------------------- | ------- |
+| Net Savings           | $20.7M  |
+| Cost Reduction        | 30.8%   |
+| Annualized Projection | $103.7M |
+
+### Business Value
+
+* Reduced customer loss
+* Improved retention targeting
+* Lower operational costs
+* Higher ROI
+
+---
+
+# 📁 Repository Structure
 
 ```text
 .
-|-- aws/
-|-- artifacts/
-|-- configs/
-|-- data/
-|   |-- external/
-|   |-- processed/
-|   |-- raw/
-|   |-- customer_churn_dataset-training-master.csv
-|   `-- customer_churn_dataset-testing-master.csv
-|-- docker/
-|-- mlruns/
-|-- notebooks/
-|-- src/
-|   |-- data/
-|   |-- features/
-|   |-- models/
-|   |-- pipelines/
-|   `-- utils/
-|-- tests/
-`-- README.md
+├── api/
+├── artifacts/
+├── configs/
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── external/
+├── docker/
+├── mlruns/
+├── notebooks/
+├── src/
+│   ├── data/
+│   ├── features/
+│   ├── models/
+│   ├── pipelines/
+│   └── utils/
+├── tests/
+├── streamlit_app.py
+├── Dockerfile
+├── requirements.txt
+└── README.md
 ```
-
-## Generic MLOps Layout
-
-- `notebooks/` for exploration and experiments.
-- `src/` for reusable training, feature, model, and inference code.
-- `configs/` for YAML-based project and experiment settings.
-- `docker/` for container build and compose files.
-- `mlruns/` for local MLflow tracking data.
-- `aws/` for deployment notes and cloud-specific setup.
-- `artifacts/` for exported models and reports.
-- `data/raw`, `data/processed`, and `data/external` for data lifecycle stages.
-
-## Stack Direction
-
-- Docker for local reproducible execution.
-- MLflow for experiment tracking and model registry workflow.
-- AWS for storage, deployment, and serving.
 
 ---
 
-## How to Run
+# 🛠️ Tech Stack
 
-1. Clone this repository.
-2. Create and activate a Python environment.
-3. Install dependencies:
+## Machine Learning
+
+* XGBoost
+* Scikit-learn
+* Pandas
+* NumPy
+
+## MLOps
+
+* MLflow
+* Great Expectations
+* Docker
+* GitHub Actions
+
+## Backend
+
+* FastAPI
+* Uvicorn
+
+## Frontend
+
+* Streamlit
+
+## Cloud
+
+* AWS EC2
+
+## Testing
+
+* Pytest
+
+---
+
+# 🚀 How To Run Locally
+
+## Clone Repository
+
+```bash
+git clone <repository-url>
+cd churn-prediction
+```
+
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Open and run the final notebook:
+## Run FastAPI
 
 ```bash
-jupyter notebook churn_prediction_final.ipynb
+uvicorn api.main:app --reload
 ```
 
-5. Run business value analysis:
-
-```bash
-python business_value_analysis.py
-```
-
-6. Launch the Streamlit dashboard:
+## Run Streamlit
 
 ```bash
 streamlit run streamlit_app.py
 ```
 
----
+## Open Application
 
-## Streamlit Deployment
-
-The dashboard is ready to deploy on Streamlit Community Cloud.
-
-1. Push this repository to GitHub.
-2. Sign in to Streamlit Community Cloud.
-3. Create a new app and point it to `streamlit_app.py`.
-4. Make sure `requirements.txt` is included at the repository root so Streamlit can install the packages.
-5. Deploy.
-
-If you want a real scoring dashboard later, save the trained preprocessing and model pipeline from the notebook as a file such as `model.joblib`, then load it inside `streamlit_app.py`.
+```text
+http://localhost:8501
+```
 
 ---
 
-## Recruiter Snapshot
+# 🎯 Recruiter Snapshot
 
-If you are hiring for Data Scientist / ML Analyst / Decision Scientist roles, this project demonstrates:
+This project demonstrates:
 
-- Ability to build a practical churn model
-- Strong understanding of evaluation trade-offs (especially recall for churn)
-- Business communication skill: turning technical metrics into dollar impact
-- End-to-end ownership mindset from exploration to executive-level insights
+✅ Machine Learning
+
+✅ Data Validation
+
+✅ Experiment Tracking
+
+✅ Model Evaluation
+
+✅ FastAPI Development
+
+✅ Streamlit Frontend
+
+✅ Docker Containerization
+
+✅ Automated Testing
+
+✅ GitHub Actions CI/CD
+
+✅ AWS Cloud Deployment
+
+✅ Business ROI Analysis
 
 ---
 
-## License
+# 👨‍💻 Author
 
-This project is open-sourced under the terms in the `LICENSE` file.
+**Nihal Siddiqui**
 
+Aspiring Data Scientist | Machine Learning Engineer | MLOps Enthusiast
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
