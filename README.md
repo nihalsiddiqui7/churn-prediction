@@ -84,9 +84,9 @@ The application includes an interactive Streamlit dashboard where users can:
 | --------- | ---------------- |
 | Accuracy  | ~90%             |
 | Recall    | ~93%             |
-| Precision | Add Actual Value |
-| F1 Score  | Add Actual Value |
-| ROC-AUC   | Add Actual Value |
+| Precision | ~89% |
+| F1 Score  | ~91.5% |
+
 
 ### Why Recall Matters
 
