@@ -216,4 +216,5 @@ __marimo__/
 churn_prediction_copy.ipynb
 churn_prediction.ipynb
 
-data/
+data/external
+data/processed
