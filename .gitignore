@@ -146,7 +146,7 @@ venv.bak/
 
 # MLOps artifacts
 mlruns/
-artifacts/
+
 models/
 *.joblib
 *.pkl
