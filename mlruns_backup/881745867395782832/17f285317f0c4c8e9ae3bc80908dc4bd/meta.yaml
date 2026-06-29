@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Data%20science/Portfolio%20Projects/churn_prediction/churn-prediction/mlruns/881745867395782832/17f285317f0c4c8e9ae3bc80908dc4bd/artifacts
+end_time: 1780336175771
+entry_point_name: ''
+experiment_id: '881745867395782832'
+lifecycle_stage: active
+run_id: 17f285317f0c4c8e9ae3bc80908dc4bd
+run_name: unique-hare-54
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780336172612
+status: 4
+tags: []
+user_id: Asus

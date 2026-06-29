@@ -1,0 +1,8 @@
+artifact_location: file:///D:/Data%20science/Portfolio%20Projects/churn_prediction/churn-prediction/mlruns/881745867395782832
+creation_time: 1780336127467
+experiment_id: '881745867395782832'
+last_update_time: 1780336127467
+lifecycle_stage: active
+name: Telco Churn
+trace_location: null
+workspace: default

@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Data%20science/Portfolio%20Projects/churn_prediction/churn-prediction/mlruns/881745867395782832/6422130e29c44632a3fbe61319277038/artifacts
+end_time: 1780668671870
+entry_point_name: ''
+experiment_id: '881745867395782832'
+lifecycle_stage: active
+run_id: 6422130e29c44632a3fbe61319277038
+run_name: mysterious-carp-502
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780668655322
+status: 3
+tags: []
+user_id: Asus

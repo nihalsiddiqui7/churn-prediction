@@ -46,7 +46,7 @@ def main(args):
         mlruns_path = args.mlflow_uri
     else:
         mlruns_path = Path(project_root, "mlruns").as_uri()
-    mlflow.set_tracking_uri(mlruns_path)
+    mlflow.set_tracking_uri("sqlite:///mlflow.db")
     mlflow.set_experiment(args.experiment)  # Creates experiment if doesn't exist
 
     # Start MLflow run - all subsequent logging will be tracked under this run

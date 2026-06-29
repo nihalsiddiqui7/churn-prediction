@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Data%20science/Portfolio%20Projects/churn_prediction/churn-prediction/mlruns/881745867395782832/6ce98ae6cc2849a7ac9de8710774813e/artifacts
+end_time: 1780415755599
+entry_point_name: ''
+experiment_id: '881745867395782832'
+lifecycle_stage: active
+run_id: 6ce98ae6cc2849a7ac9de8710774813e
+run_name: loud-shad-652
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780415753881
+status: 4
+tags: []
+user_id: Asus

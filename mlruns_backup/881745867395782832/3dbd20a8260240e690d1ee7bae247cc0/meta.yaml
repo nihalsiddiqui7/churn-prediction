@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Data%20science/Portfolio%20Projects/churn_prediction/churn-prediction/mlruns/881745867395782832/3dbd20a8260240e690d1ee7bae247cc0/artifacts
+end_time: 1780415840845
+entry_point_name: ''
+experiment_id: '881745867395782832'
+lifecycle_stage: active
+run_id: 3dbd20a8260240e690d1ee7bae247cc0
+run_name: learned-roo-76
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780415809680
+status: 3
+tags: []
+user_id: Asus

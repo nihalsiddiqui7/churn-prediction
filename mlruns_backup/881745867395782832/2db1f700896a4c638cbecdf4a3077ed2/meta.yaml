@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Data%20science/Portfolio%20Projects/churn_prediction/churn-prediction/mlruns/881745867395782832/2db1f700896a4c638cbecdf4a3077ed2/artifacts
+end_time: 1780419133553
+entry_point_name: ''
+experiment_id: '881745867395782832'
+lifecycle_stage: active
+run_id: 2db1f700896a4c638cbecdf4a3077ed2
+run_name: calm-rook-865
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780419112910
+status: 3
+tags: []
+user_id: Asus

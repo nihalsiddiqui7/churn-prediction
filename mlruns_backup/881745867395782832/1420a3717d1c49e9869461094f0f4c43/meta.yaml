@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Data%20science/Portfolio%20Projects/churn_prediction/churn-prediction/mlruns/881745867395782832/1420a3717d1c49e9869461094f0f4c43/artifacts
+end_time: 1780416337764
+entry_point_name: ''
+experiment_id: '881745867395782832'
+lifecycle_stage: active
+run_id: 1420a3717d1c49e9869461094f0f4c43
+run_name: traveling-cat-812
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780416321808
+status: 3
+tags: []
+user_id: Asus

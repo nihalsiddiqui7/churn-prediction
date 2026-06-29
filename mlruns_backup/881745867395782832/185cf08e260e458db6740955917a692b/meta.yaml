@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Data%20science/Portfolio%20Projects/churn_prediction/churn-prediction/mlruns/881745867395782832/185cf08e260e458db6740955917a692b/artifacts
+end_time: 1780336264051
+entry_point_name: ''
+experiment_id: '881745867395782832'
+lifecycle_stage: active
+run_id: 185cf08e260e458db6740955917a692b
+run_name: nebulous-rat-81
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780336225723
+status: 3
+tags: []
+user_id: Asus

@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Data%20science/Portfolio%20Projects/churn_prediction/churn-prediction/mlruns/881745867395782832/fa17457ad1d2426dbcf589e512fe21d8/artifacts
+end_time: 1780416507956
+entry_point_name: ''
+experiment_id: '881745867395782832'
+lifecycle_stage: active
+run_id: fa17457ad1d2426dbcf589e512fe21d8
+run_name: marvelous-bee-344
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780416485408
+status: 3
+tags: []
+user_id: Asus

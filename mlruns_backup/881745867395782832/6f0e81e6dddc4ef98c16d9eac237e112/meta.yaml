@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Data%20science/Portfolio%20Projects/churn_prediction/churn-prediction/mlruns/881745867395782832/6f0e81e6dddc4ef98c16d9eac237e112/artifacts
+end_time: 1780411180258
+entry_point_name: ''
+experiment_id: '881745867395782832'
+lifecycle_stage: active
+run_id: 6f0e81e6dddc4ef98c16d9eac237e112
+run_name: wise-goose-128
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780411170215
+status: 3
+tags: []
+user_id: Asus
