@@ -88,7 +88,7 @@ if st.button("🚀 Predict Churn", use_container_width=True):
     try:
 
         response = requests.post(
-            "http://13.236.201.73:8000/predict",
+            "http://127.0.0.1:8000/predict",
             json=payload
         )
 
